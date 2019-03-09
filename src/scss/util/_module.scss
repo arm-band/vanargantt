@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+// ============================================= *
+//                                               *
+// モジュール                                      *
+//                                               *
+// ============================================= */
+//trasition
+@mixin t() {
+    transition: all 0.3s ease;
+}
+
+//キービジュアルの背景画像
+@mixin eyecatchBGImg($imgPath) {
+    .eyecatch {
+        background: {
+            image: url($imgPath);
+            repeat: no-repeat;
+            position: center center;
+        }
+    }
+    .eyecatch {
+        background-size: cover;
+    }
+}
+//キービジュアルのiOS Safari対策コードを出力
+@mixin eyecatchMobileSafari() {
+    body:not(.mobileSafari) .eyecatch {
+        background-attachment: fixed;
+    }
+    body.mobileSafari .eyecatch { //index.jsでUAにより付与。mobile Safariバグ対策
+        background-attachment: scroll;
+    }
+}
+//キービジュアルに見出しを左右上下中央寄せ
+@mixin eyecatchCenter() {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+//キービジュアルの見出しのタイポグラフィ
+@mixin eyecatchTypo($fontSize) {
+    color: $main-color;
+    z-index: 3;
+    font: {
+        size: $fontSize;
+        family: "Dancing Script", cursive, "Sawarabi Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "HGP明朝B", Georgia, メイリオ, Meiryo, serif; /* googleフォント */
+    }
+}
+//別ページからアンカー位置へ移動する際にずれるのを防止
+@mixin fixedAnchor() {
+    margin-top: 0 - $navbar-height;
+    padding-top: $navbar-height;
+}

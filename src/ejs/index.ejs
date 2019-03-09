@@ -1,0 +1,33 @@
+<%
+parameters = {
+    title: "ホーム",
+    entitle: "Home",
+    css: "index",
+    js: "app.min",
+    description: config.commons.description,
+    ogpimage: config.commons.url + parameters.ogpimage
+}
+%><%- include("util/_init_load") %><%- include("util/_headset", { config, parameters }) %>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<%- include("partial/_head", { config, parameters, commonVar, metaTitle, metaDescription, metaOgpimage }) %>
+</head>
+<body data-spy="scroll" data-target="#navbarMenu" data-offset="<%= navbarHeight %>" class="<%= id %>" id="<%= id %>">
+<div id="wrapper">
+<div class="upper">
+<%- include("partial/_header", { config, commonVar }) %>
+    <!-- main -->
+    <main class="main <%= id %>main gantt_main" id="gantt_main">
+        <section class="container-fluid gantt_container">
+            <svg id="gantt"></svg>
+        </section>
+    </main>
+    <!-- /main -->
+</div>
+<div class="hidden dataField" id="ganttData" data-field='<%= JSON.stringify(task) %>'></div>
+<%- include("partial/_footer", { config, copyRightYear }) %>
+</div>
+<%- include("partial/_js_loader", { parameters, relPath }) %>
+</body>
+</html>

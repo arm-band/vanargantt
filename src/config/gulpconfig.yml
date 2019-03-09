@@ -1,0 +1,19 @@
+functions:
+  usephp: false
+  news: false
+  ssl: true
+  democontents: false
+  firstlock: true
+ftp:
+  user: null
+  password: null
+  host: test.example.com
+  port: 21
+  localRoot: ./dist/
+  remoteRoot: ./path/to/web/root/
+  include:
+    - "*"
+    - "**/*"
+  exclude:
+    - daishi/**/*
+  deleteRemote: false

@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+// ============================================= *
+//                                               *
+// 変数指定                                       *
+//                                               *
+// ============================================= */
+$main-color2: darken($main-color, 8%);
+$main-color3: lighten($main-color, 8%);
+$accent-color: adjust-hue($main-color, 150deg);
+$link-color: adjust-hue($main-color, 210deg);
+$link-v-color: darken($link-color, 15%);
+$link-ha-color: darken($link-color, 8%);
+
+// ============================================= *
+//                                               *
+// 全体設定                                       *
+//                                               *
+// ============================================= */
+a, a:link {
+    color: $link-color;
+    text-decoration: none;
+    @include t();
+}
+a:visited {
+    color: $link-v-color;
+    text-decoration: none;
+}
+a:hover, a:active {
+    color: $link-ha-color;
+    text-decoration: underline;
+}
+
+//IEでスクロールバーの背後までページが描画されてしまうのを防ぐ
+@-ms-viewport {
+    width: auto;
+    initial-scale: 1;
+}
+//Chrome系のリストのpaddding打ち消し
+ul, ol {
+    -webkit: {
+        margin: {
+            before: 0;
+            after: 0;
+        }
+        padding-start: 0;
+    }
+}

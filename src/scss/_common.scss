@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+// ============================================= *
+//                                               *
+// Import                                        *
+//                                               *
+// ============================================= */
+@import "assets/bootstrap/bootstrap"; //bootstrap
+@import "util/var"; //変数
+@import "../../node_modules/brand-colors/dist/latest/scss/brand-colors.latest"; //ソーシャルメディアなどのブランドカラー
+@import "../../node_modules/frappe-gantt/src/gantt"; //ガントチャート用
+@import "util/typo"; //ベンダープレフィックス等のMixinモジュール
+@import "util/module"; //ベンダープレフィックス等のMixinモジュール
+//@import "util/bootcanceller"; //bootstrapでいつも気になるものをキャンセル
+@import "util/base"; //フォント指定やIE対処など
+
+// ============================================= *
+//                                               *
+// 全体                                           *
+//                                               *
+// ============================================= */
+//iPhoneのURLバーに色を付ける
+body{
+    background-color: $main-color;
+    #wrapper {
+        background-color: $bg-color;
+    }
+}
+.upper {
+    min-height: calc(100vh - #{$footer-height}); //コンテンツの高さが足りなくてもフッタを最下部に表示するように //1.5rem * 2:my-4で足される上端と下端のマージンの合計
+}
+// ============================================= *
+//                                               *
+// ヘッダ                                         *
+//                                               *
+// ============================================= */
+//@import "util/navbar"; //ヘッダナビゲーションバーの設定。ハンバーガーメニューのアニメーションもここで。
+@import "partial/header";
+
+// ============================================= *
+//                                               *
+// メインコンテンツ                                 *
+//                                               *
+// ============================================= */
+.main {
+    margin: {
+        left: 0;
+        right: 0;
+    }
+    padding: {
+        left: 0;
+        right: 0;
+    }
+    background-color: $bg-color;
+    color: $color;
+    div:not(.text-center) p:not(.text-center) {
+        text-indent: 1rem;
+        & .fa-fw {
+            margin: {
+                left: -1rem;
+                right: 1rem;
+            }
+        }
+    }
+    section {
+        ul {
+            padding-left: 1.4rem;
+        }
+        ol {
+            padding-left: 1.6rem;
+        }
+    }
+    .fixed_anchor {
+        @include fixedAnchor();
+    }
+}
+
+// ============================================= *
+//                                               *
+// フッタ                                         *
+//                                               *
+// ============================================= */
+@import "partial/footer";
+
+// ***** ページトップへ戻る ***** */
+@import "partial/returnpagetop";
