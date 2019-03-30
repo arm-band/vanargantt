@@ -1,25 +1,57 @@
 [
     {
         "start": "2019-04-01",
-        "end": "2019-04-12",
-        "name": "freeze ACTress",
-        "id": "maxilla",
-        "progress": 10
+        "end": "2019-04-03",
+        "name": "見積もり",
+        "id": "estimate",
+        "progress": 80
     },
     {
-        "start": "2019-04-10",
-        "end": "2019-04-14",
-        "name": "ACTor nefarious",
-        "id": "Tusk 1",
-        "progress": 5,
-        "dependencies": "maxilla"
+        "start": "2019-04-04",
+        "end": "2019-04-12",
+        "name": "デザインカンプ",
+        "id": "design",
+        "progress": 50,
+        "dependencies": "estimate"
+    },
+    {
+        "start": "2019-04-15",
+        "end": "2019-04-17",
+        "name": "受注",
+        "id": "order",
+        "progress": 40,
+        "dependencies": "estimate"
     },
     {
         "start": "2019-04-18",
-        "end": "2019-04-30",
-        "name": "ACTive directory",
-        "id": "mandible",
-        "progress": 30,
-        "dependencies": "Tusk 1"
+        "end": "2019-04-26",
+        "name": "デザイン確定",
+        "id": "freeze",
+        "progress": 40,
+        "dependencies": "design"
+    },
+    {
+        "start": "2019-05-07",
+        "end": "2019-05-31",
+        "name": "コーディング",
+        "id": "coding",
+        "progress": 40,
+        "dependencies": "freeze"
+    },
+    {
+        "start": "2019-05-20",
+        "end": "2019-06-14",
+        "name": "仮公開・テスト",
+        "id": "test",
+        "progress": 40,
+        "dependencies": "coding"
+    },
+    {
+        "start": "2019-06-17",
+        "end": "2019-06-21",
+        "name": "公開",
+        "id": "release",
+        "progress": 40,
+        "dependencies": "test"
     }
 ]
