@@ -1,5 +1,5 @@
 {
-    "name": "Vanargantt",
+    "name": "vanargantt",
     "version": "0.2.2",
     "description": "frappe-ganttによるガントチャートのボイラープレートです。",
     "main": "gulpfile.js",
